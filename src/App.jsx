@@ -1,71 +1,55 @@
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Projects from './components/Projects'
+import Skills from './components/Skills'
+import Contact from './components/Contact'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      {/* Subtle starry dots */}
+      <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_10%,rgba(56,189,248,0.10),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(147,51,234,0.10),transparent_30%),radial-gradient(circle_at_50%_80%,rgba(59,130,246,0.10),transparent_40%)]" />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
+      <Navbar />
 
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
+      <main className="relative">
+        <Hero />
+        <section id="about" className="relative py-24">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="rounded-3xl bg-slate-900/60 border border-white/10 p-8 backdrop-blur-md">
+              <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">About</h2>
+              <p className="text-slate-300 mt-4 leading-relaxed">
+                I’m a third‑year IT student based in Greece, focused on building modern web experiences
+                that are fast, accessible, and a little bit playful. I love working across the stack —
+                designing clean UIs, crafting reliable APIs, and shipping features that feel great to use.
+              </p>
+              <div className="mt-6 grid sm:grid-cols-3 gap-4 text-sm text-slate-200">
+                <div className="rounded-xl bg-white/5 border border-white/10 p-4">
+                  <p className="text-slate-400">Currently learning</p>
+                  <p className="font-medium mt-1">TypeScript, CI/CD</p>
+                </div>
+                <div className="rounded-xl bg-white/5 border border-white/10 p-4">
+                  <p className="text-slate-400">Interests</p>
+                  <p className="font-medium mt-1">APIs, Cloud, DX</p>
+                </div>
+                <div className="rounded-xl bg-white/5 border border-white/10 p-4">
+                  <p className="text-slate-400">Languages</p>
+                  <p className="font-medium mt-1">English, Greek</p>
+                </div>
               </div>
             </div>
           </div>
+        </section>
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
 
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
-        </div>
-      </div>
+      <footer className="relative border-t border-white/10 py-10 text-center text-slate-400">
+        <p>
+          © {new Date().getFullYear()} Stavros • Built with love in Greece
+        </p>
+      </footer>
     </div>
   )
 }
